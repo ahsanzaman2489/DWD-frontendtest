@@ -1,12 +1,81 @@
-import React from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import React, {useState} from 'react';
+import {useDispatch} from 'react-redux';
 import {setLogin} from 'store/actions'
+import {useNavigate} from 'react-router-dom';
+import {loginService} from "../services";
+import {Input} from "components/Input";
+import useForm from "hooks/useForm";
+import {FormLayOut} from "../layout/form";
+import {toast} from "react-toastify";
 
 const Login = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate();
+    const schema = [
+        {
+            name: 'username',
+            test: [{
+                required: true,
+                message: 'Username required'
+            }]
+        },
+        {
+            name: 'password',
+            test: [{
+                required: true,
+                message: 'password required'
+            }],
+        }
+    ]
+
+    const [isLoading, setIsLoading] = useState(false);
+
+
+    const submitForm = async () => {
+        setIsLoading(true)
+        try {
+            const response = await loginService(values)
+
+            if (response.status === 200) {
+                setIsLoading(false)
+                dispatch(setLogin(response.data))
+                navigate('/table', {replace: true})
+            }
+
+        } catch (e) {
+            setIsLoading(false)
+            toast('wrong username or password', {
+                type: 'error',
+                theme: 'colored'
+            })
+        }
+
+    }
+    const {handleChange, values, errors, handleSubmit}: any = useForm(schema, submitForm);
 
     return (
-        <div onClick={() => dispatch(setLogin({}))}>Login</div>
+        <>
+            <FormLayOut handleSubmit={handleSubmit} title={'Login'} type={'login'} isLoading={isLoading}>
+                <>
+                    <Input icon={'bx-user'}
+                           type="text"
+                           placeholder="User name"
+                           onChange={handleChange}
+                           name={'username'}
+                           value={values.username}
+                           error={errors.username}
+                    />
+                    <Input icon={'bx-lock-alt'}
+                           type="password"
+                           placeholder="Password"
+                           name={'password'}
+                           onChange={handleChange}
+                           value={values.password}
+                           error={errors.password}
+                    />
+                </>
+            </FormLayOut>
+        </>
     );
 }
 
