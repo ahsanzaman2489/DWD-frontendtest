@@ -43,35 +43,33 @@ nav {
     li {
       float: left;
       position: relative;
+      cursor: pointer;
+      display: block;
+      padding: 10px 20px 0 20px;
+      line-height: 50px;
+      background: $nav-background;
+      color: $nav-font-color;
+      text-decoration: none;
+      text-transform: uppercase;
 
-      a {
-        display: block;
-        padding: 10px 20px 0 20px;
-        line-height: 50px;
-        background: $nav-background;
-        color: $nav-font-color;
-        text-decoration: none;
-        text-transform: uppercase;
 
+      &::before {
+        transition: 300ms;
+        height: 2px;
+        content: "";
+        position: absolute;
+        background-color: white;
+        width: 0;
+        bottom: 7px;
+      }
 
-        &::before {
-          transition: 300ms;
-          height: 2px;
-          content: "";
-          position: absolute;
-          background-color: white;
-          width: 0;
-          bottom: 7px;
-        }
+      &:hover::before {
+        width: 70%;
+      }
 
-        &:hover::before {
-          width: 70%;
-        }
-
-        &:not(:only-child):after {
-          padding-left: 4px;
-          content: ' ▾';
-        }
+      &:not(:only-child):after {
+        padding-left: 4px;
+        content: ' ▾';
       }
 
       ul li {

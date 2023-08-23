@@ -39,14 +39,6 @@ const SignUp = () => {
                 match: 'password',
                 message: 'password not matched'
             }],
-        },
-        {
-            name: 'role',
-            test: [{
-                required: true,
-                message: 'role required'
-            }],
-            value: 'admin'
         }
     ]
 
@@ -103,21 +95,6 @@ const SignUp = () => {
                            onChange={handleChange}
                            value={values.confirmPassword}
                            error={errors.confirmPassword}
-                    />
-
-                    <SelectBox icon={'bx-user'}
-                               placeholder="Role"
-                               name={'role'}
-                               onChange={handleChange}
-                               value={values.role}
-                               error={errors.role}
-                               options={[{
-                                   name: 'admin',
-                                   value: 'admin'
-                               }, {
-                                   name: 'editor',
-                                   value: 'editor'
-                               }]}
                     />
                 </>
             </FormLayOut>

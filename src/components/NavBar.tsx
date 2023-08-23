@@ -15,7 +15,7 @@ export function NavBar() {
                 </div>
                 <nav>
                     {user.isAuthenticated && <ul className="nav-list">
-                        <li><a href="" onClick={() => dispatch(logOut())}>Logout</a></li>
+                        <li onClick={() => dispatch(logOut())}>Logout</li>
                     </ul>}
                 </nav>
             </div>
