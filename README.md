@@ -27,20 +27,31 @@ src
 4) Redux presistor used to presist user state in local storage on any change and will hydrate the app on reload
 5) Search box for table
 6) Add new TODO button to add new one
-7) Pagination , it was not mentioned in the description but i added it to make UX more robust.
 8) Tokenization , All URL requires Access token after login
-9) Axions interceptor added specialy for response to check if token is expired redirect to login after showing the message.
 10) Component/Module Based SCSS.
 11) Role base rendering
 12) All Exeptions Handled
 13) Loadings added where needed
+14) When you login as editor and try to hover on certain row , it will show your edit and delete button. after clicking edit you will go into edit mode.
+
+# What I did out the scope which is good for UX
+1) Pagination , it was not mentioned in the description but i added it to make UX more robust.
+2) Axios interceptor added specialy for response to check if token is expired redirect to login after showing the message.
+3) Creating custom hooks like a new plugin
+4) Added Loading ad expections
+5) Toast added on success and errors where needed to let user know
+6) .env created for Base URL's
+7) Project structure managed
+8) Protected Routed mechanism added so user cant not visit without having valid token
 
 # Limitaions
 1) Endpoint was not provided in the description , so i decide to use dummyjason.com server to get the data, but data is not real but it will mimic every action (CRUD)
 2) Refresh token was not provided by dummyjason.com so i decide to redirect user to login instead getting the new token with Refresh token.
 3) Desing was not provided by i try to come up with simple one with good UX and try to cover most of the cases.
 4) In description its mentioned that password validation needs to apply and without signup page it was not possibe, So i created the page and added the Sign up Api.
-5) No Clear guidlines on caching
+5) You can not create user but can check the validation and mock response from the server
+6) No Clear guidlines on caching
+7) Every CRUD operation is throuhg API integration but limitation is if you referesh you will get old data because sever is not saving state. but you will see the changes going through and coming from server
 
 # Things i wish , i could have implemented
 1) Code splitting
