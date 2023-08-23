@@ -8,6 +8,7 @@
 7) Toastify
 
 # Overview of the project
+```javascript
 src 
     -- Components (Reusable components)
     -- Hooks (Custom hooks for sorting , filtering and form validation)
@@ -17,7 +18,7 @@ src
     -- Layout (Layout to reuse on different screens)
     -- Styles (sass styles)
     -- Store (redux store with Reducers, Actions , Redux presistor)
-
+```
 
 # Key Features of project
 1) Built with React 18 and Create react App
@@ -39,9 +40,9 @@ src
 2) Refresh token was not provided by dummyjason.com so i decide to redirect user to login instead getting the new token with Refresh token.
 3) Desing was not provided by i try to come up with simple one with good UX and try to cover most of the cases.
 4) In description its mentioned that password validation needs to apply and without signup page it was not possibe, So i created the page and added the Sign up Api.
-5) 
+   
 
-# Things i wish , i could have implmented
+# Things i wish , i could have implemented
 1) Code splitting
 2) Referesh Token
 3) System design
