@@ -40,17 +40,20 @@ src
 2) Refresh token was not provided by dummyjason.com so i decide to redirect user to login instead getting the new token with Refresh token.
 3) Desing was not provided by i try to come up with simple one with good UX and try to cover most of the cases.
 4) In description its mentioned that password validation needs to apply and without signup page it was not possibe, So i created the page and added the Sign up Api.
-   
+5) No Clear guidlines on caching
 
 # Things i wish , i could have implemented
 1) Code splitting
 2) Referesh Token
 3) System design
 4) Test cases
+5) caching
 
 # Login Credentials
+```javascript
 1) user : atuny0 , pass : 9uQFF1Lh , role : non editor
 2) user : hbingley1 , pass : CQutx25i8r , role : editor
+```
 
 # Getting Started with Create React App
 
