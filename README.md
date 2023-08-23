@@ -1,3 +1,56 @@
+# Stack
+1) React
+2) React Router
+3) Redux
+4) Redux presist (to presist the state in localstorage)
+5) HTML
+6) SCSS
+7) Toastify
+
+# Overview of the project
+src 
+    -- Components (Reusable components)
+    -- Hooks (Custom hooks for sorting , filtering and form validation)
+    -- Pages (Routes)
+    -- Services (Endpoints)
+    -- Axios (Axions client with interceptor)
+    -- Layout (Layout to reuse on different screens)
+    -- Styles (sass styles)
+    -- Store (redux store with Reducers, Actions , Redux presistor)
+
+
+# Key Features of project
+1) Built with React 18 and Create react App
+2) Typescript for static type checkings
+3) Custom hooks created from sractch for sorting , filtering tables and form validation with limited funcationality
+4) Redux presistor used to presist user state in local storage on any change and will hydrate the app on reload
+5) Search box for table
+6) Add new TODO button to add new one
+7) Pagination , it was not mentioned in the description but i added it to make UX more robust.
+8) Tokenization , All URL requires Access token after login
+9) Axions interceptor added specialy for response to check if token is expired redirect to login after showing the message.
+10) Component/Module Based SCSS.
+11) Role base rendering
+12) All Exeptions Handled
+13) Loadings added where needed
+
+# Limitaions
+1) Endpoint was not provided in the description , so i decide to use dummyjason.com server to get the data, but data is not real but it will mimic every action (CRUD)
+2) Refresh token was not provided by dummyjason.com so i decide to redirect user to login instead getting the new token with Refresh token.
+3) Desing was not provided by i try to come up with simple one with good UX and try to cover most of the cases.
+4) In description its mentioned that password validation needs to apply and without signup page it was not possibe, So i created the page and added the Sign up Api.
+5) 
+
+# Things i wish , i could have implmented
+1) Code splitting
+2) Referesh Token
+3) System design
+4) Test cases
+
+# Login Credentials
+1) user : atuny0 , pass : 9uQFF1Lh , role : non editor
+2) user : hbingley1 , pass : CQutx25i8r , role : editor
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
