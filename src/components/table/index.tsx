@@ -52,18 +52,25 @@ export function Table(props: Props) {
         handleSearchData(value)
     }
 
+    const clearSearch = () => {
+        setSearchTerm('');
+        handleSearchData()
+    }
+
     useEffect(() => {
         setTotalPosts(total)
     }, [total]);
 
     useEffect(() => {
-        setSearchTerm('')
+        handleSearchData(searchTerm)
     }, [data]);
 
     return (
         <div className={'table-container'}>
             <div className={'search-box'}>
                 <Input value={searchTerm} onChange={handleSearch} className={'search'} icon={'bx-search'}/>
+                {searchTerm.length > 0 && <i className={`bx bx-x icon cancel search`} onClick={clearSearch}
+                />}
             </div>
 
             <table>

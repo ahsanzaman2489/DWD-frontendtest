@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 export const useSearch = (data) => {
     const [tableData, setTableData] = useState(data);
 
-    const handleSearchData = (searchTerm) => {
+    const handleSearchData = (searchTerm = '') => {
         if (searchTerm === '') {
             setTableData(data);
             return;
