@@ -55,12 +55,13 @@ src
 6) No Clear guidlines on caching
 7) Every CRUD operation is throuhg API integration but limitation is if you referesh you will get old data because sever is not saving state. but you will see the changes going through and coming from server
 
-# Things i wish , i could have implemented
+# Things i wish , i could have implemented because of time
 1) Code splitting
 2) Referesh Token
 3) System design
 4) Test cases
 5) caching
+6) query params in the url to the current page state of thr table
 
 # Login Credentials
 ```javascript
