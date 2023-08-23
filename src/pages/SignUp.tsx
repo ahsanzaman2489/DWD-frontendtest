@@ -57,6 +57,10 @@ const SignUp = () => {
 
             if (response.status === 200) {
                 setIsLoading(false)
+                toast('User created successfully', {
+                    type: 'success',
+                    theme: 'colored'
+                })
                 navigate('/', {replace: true})
             }
 

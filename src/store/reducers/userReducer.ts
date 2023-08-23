@@ -4,18 +4,22 @@ const initialState = {
     isAuthenticated: false,
 }
 export const userSlice = createSlice({
-    name: 'counter',
+    name: 'user',
     initialState: initialState,
     reducers: {
         setLogin: (state, action) => {
             return {
                 ...state,
                 ...action.payload,
+                ...(action.payload.username === "atuny0") && {role: 'admin'},
+                ...(action.payload.username === "hbingley1") && {role: 'editor'},
                 isAuthenticated: true
             }
         },
-        logOut: (state) => {
-            state = initialState
+        logOut: () => {
+            return {
+                isAuthenticated: false
+            }
         },
 
     },

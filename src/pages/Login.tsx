@@ -1,12 +1,13 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
-import {setLogin} from 'store/actions'
+import {logOut, setLogin} from 'store/actions'
 import {useNavigate} from 'react-router-dom';
 import {loginService} from "../services";
 import {Input} from "components/Input";
 import useForm from "hooks/useForm";
 import {FormLayOut} from "../layout/form";
 import {toast} from "react-toastify";
+import 'styles/login.scss'
 
 const Login = () => {
     const dispatch = useDispatch()
@@ -28,6 +29,10 @@ const Login = () => {
         }
     ]
 
+    useEffect(() => {
+        dispatch(logOut())
+    }, []);
+
     const [isLoading, setIsLoading] = useState(false);
 
 
@@ -39,7 +44,7 @@ const Login = () => {
             if (response.status === 200) {
                 setIsLoading(false)
                 dispatch(setLogin(response.data))
-                navigate('/table', {replace: true})
+                navigate('/home', {replace: true})
             }
 
         } catch (e) {

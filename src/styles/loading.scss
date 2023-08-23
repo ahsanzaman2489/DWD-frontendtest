@@ -1,0 +1,16 @@
+.loading-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #a599b433;
+  z-index: 99;
+
+  .icon {
+    font-size: 60px;
+  }
+}

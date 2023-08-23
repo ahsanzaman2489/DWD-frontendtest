@@ -1,16 +1,16 @@
 import React, {useState} from 'react'
 import {isEmpty, omit} from 'lodash'
 
-const useForm = (schema: any, callback: any) => {
+const useForm = (schema, callback) => {
 
-    const initialValues = schema.reduce((acc: any, curr: any) => {
+    const initialValues = schema.reduce((acc, curr) => {
         return {
             ...acc,
             [curr.name]: curr.value ? curr.value : ''
         }
     }, {})//Creating InitialValues
 
-    const tests = schema.reduce((acc: any, curr: any) => {
+    const tests = schema.reduce((acc, curr) => {
         return {
             ...acc,
             [curr.name]: curr.test
@@ -22,15 +22,14 @@ const useForm = (schema: any, callback: any) => {
     //Errors
     const [errors, setErrors] = useState({});
 
-    const validate = (name: string, value: string) => {
+    const validate = (name, value) => {
         //A function to validate each input values
 
 
         if (tests[name]) {
 
             for (const test of tests[name]) {
-                // console.log(test, value, name, 'required' in test, value.length)
-                console.log(value, values[test.match])
+
                 if ('required' in test && value.length === 0) {
                     return {
                         [name]: test.message ? test.message : `${name} is required field`,
@@ -59,15 +58,16 @@ const useForm = (schema: any, callback: any) => {
     }
 
     //A method to handle form inputs
-    const handleChange = (event: React.SyntheticEvent) => {
+    const handleChange = (event) => {
         //To stop default events
         event.persist();
-        const element = event.currentTarget as HTMLInputElement
+        const element = event.currentTarget;
+
         let name = element.name;
         let val = element.value;
 
         const newErrors = validate(name, val);
-        // console.log(newErrors)
+
         setErrors(prevState => {
             return {
                 ...prevState,
@@ -82,7 +82,7 @@ const useForm = (schema: any, callback: any) => {
 
     }
 
-    const handleSubmit = (event: React.SyntheticEvent) => {
+    const handleSubmit = (event) => {
 
         if (event) event.preventDefault();
         let newErrors = {}
