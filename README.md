@@ -33,6 +33,8 @@ src
 12) All Exeptions Handled
 13) Loadings added where needed
 14) When you login as editor and try to hover on certain row , it will show your edit and delete button. after clicking edit you will go into edit mode.
+15) context api added to get manage table state
+16) user state is handled by Redux
 
 # What I did out the scope which is good for UX
 1) Pagination , it was not mentioned in the description but i added it to make UX more robust.
