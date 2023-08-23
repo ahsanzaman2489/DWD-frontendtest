@@ -1,6 +1,6 @@
-import React, {createContext, useContext, useState, PropsWithChildren} from "react";
+import React, {createContext, useState, PropsWithChildren} from "react";
 import {deleteTodo, editTodo, getAllTodos} from "../../services";
-import {useSelector} from "react-redux";
+
 
 type dataType = {
     id: number,

@@ -16,8 +16,8 @@ type Props = {};
 export function Table(props: Props) {
     const {data, columns, fetchTodos, isDataLoading}: any = useContext(TableContext)
     const {todos, total} = data;
-    const [tableData, handleSorting]: any = useSortingTable(todos, columns);
-    const {filteredData, handleSearchData}: any = useSearch(tableData);
+    const {filteredData, handleSearchData}: any = useSearch(todos);
+    const [tableData, handleSorting]: any = useSortingTable(filteredData, columns);
     const {token} = useSelector((state: any) => state.user)
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPosts, setTotalPosts] = useState(0);
@@ -75,10 +75,10 @@ export function Table(props: Props) {
 
             <table>
                 <TableHead handleSorting={handleSorting}/>
-                {filteredData.length > 0 && <TableBody tableData={filteredData}/>}
+                {tableData.length > 0 && <TableBody tableData={tableData}/>}
             </table>
-            {filteredData.length === 0 && <div className={'no-results'}>No results</div>}
-            {filteredData.length > 0 && <Paginate
+            {tableData.length === 0 && <div className={'no-results'}>No results</div>}
+            {tableData.length > 0 && <Paginate
                 postsPerPage={postsPerPage}
                 totalPosts={totalPosts}
                 currentPage={currentPage}
