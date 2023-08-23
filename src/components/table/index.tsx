@@ -17,7 +17,7 @@ export function Table(props: Props) {
     const {data, columns, fetchTodos, isDataLoading}: any = useContext(TableContext)
     const {todos, total} = data;
     const [tableData, handleSorting]: any = useSortingTable(todos, columns);
-    const {filteredData, handleSearchData}: any = useSearch(todos);
+    const {filteredData, handleSearchData}: any = useSearch(tableData);
     const {token} = useSelector((state: any) => state.user)
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPosts, setTotalPosts] = useState(0);

@@ -7,8 +7,6 @@ import {Loading} from "../components/Loading";
 const Home = () => {
     const {data, isDataLoading}: any = useContext(TableContext)
     const {todos} = data;
-    console.log(isDataLoading)
-
 
     return (
         <>

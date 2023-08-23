@@ -254,15 +254,18 @@
       font-weight: 900;
       text-transform: uppercase;
       position: relative;
+
+      .icon {
+        position: absolute;
+        font-size: 12px;
+        top: 50%;
+        margin-top: -6px;
+        right: 10px
+      }
+
     }
 
-    .icon {
-      position: absolute;
-      font-size: 12px;
-      top: 50%;
-      margin-top: -6px;
-      right: 10px
-    }
+
 
     tr:last-child td {
       border-bottom: none;
