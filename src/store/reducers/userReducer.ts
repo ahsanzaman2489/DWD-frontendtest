@@ -11,7 +11,7 @@ export const userSlice = createSlice({
             return {
                 ...state,
                 ...action.payload,
-                ...(action.payload.username === "atuny0") && {role: 'admin'},
+                ...(action.payload.username === "atuny0") && {role: 'non-editor'},
                 ...(action.payload.username === "hbingley1") && {role: 'editor'},
                 isAuthenticated: true
             }

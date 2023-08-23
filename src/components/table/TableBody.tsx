@@ -83,6 +83,7 @@ export function TableBody({tableData}: any) {
         removeTodo(id)
     }
 
+    const isEditor = role === 'editor';
 
     return (
         <tbody>
@@ -93,8 +94,8 @@ export function TableBody({tableData}: any) {
                 return <tr key={item.id + item.todo}>
                     {columns.map(({accessor, id, editable}: any, index: number) =>
                         <td key={accessor + id}
-                            onMouseOver={() => MouseOver(item.id)}
-                            onMouseOut={() => MouseOut()}
+                            {...(isEditor ? {onMouseOver: () => MouseOver(item.id)} : {})}
+                            {...(isEditor ? {onMouseOut: () => MouseOut()} : {})}
 
                         >
                             {editable && editMode.show && editMode.id === item.id ?
@@ -103,7 +104,7 @@ export function TableBody({tableData}: any) {
                                        name={accessor}
                                        onChange={(e) => handleChange(e)}
 
-                                /> : <>{index === columns.length - 1 ?
+                                /> : <>{index === columns.length - 1 && role === 'editor' ?
                                     <>
                                         {item[accessor].toString()}
                                         {showButtons.show && showButtons.id === item.id && !editMode.show &&
