@@ -56,6 +56,10 @@ export function Table(props: Props) {
         setTotalPosts(total)
     }, [total]);
 
+    useEffect(() => {
+        setSearchTerm('')
+    }, [data]);
+
     return (
         <div className={'table-container'}>
             <div className={'search-box'}>
