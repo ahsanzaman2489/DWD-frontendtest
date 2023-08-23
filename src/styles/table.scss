@@ -266,7 +266,6 @@
     }
 
 
-
     tr:last-child td {
       border-bottom: none;
     }
@@ -328,17 +327,35 @@
 }
 
 .search-box {
-  width: 400px;
+  width: 100%;
   float: right;
   margin-bottom: 20px;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .input_box {
+    margin: 0;
+    padding: 1rem 60px 1rem 1rem;
+  }
 
   .search.icon {
     position: absolute;
     right: 20px;
     top: 50%;
     font-size: 20px;
-    margin-top: -3px;
+    margin-top: -10px;
+  }
+
+  .add {
+    display: flex;
+    position: relative;
+
+    .input_box {
+      height: 100%;
+      padding-right: 60px;
+    }
   }
 }
 
@@ -346,4 +363,22 @@
   background: white;
   padding: 2em;
   text-align: center;
+}
+
+@media screen and (max-width: 680px) {
+
+  .table-wrapper {
+    display: block;
+    overflow: scroll;
+    width: 100%;
+  }
+
+  .search-box {
+    flex-direction: column;
+
+    .add {
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
 }

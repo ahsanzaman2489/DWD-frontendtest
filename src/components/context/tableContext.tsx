@@ -1,5 +1,5 @@
 import React, {createContext, useState, PropsWithChildren} from "react";
-import {deleteTodo, editTodo, getAllTodos} from "../../services";
+import {addTodo, deleteTodo, editTodo, getAllTodos} from "../../services";
 
 
 type dataType = {
@@ -74,6 +74,35 @@ export const TableProvider: React.FC<PropsWithChildren<unknown>> = ({children}) 
         })
     }
 
+    const addNewTodo = async (text: string, userId: number, callback: any) => {
+        setIsDataLoading(true)
+        try {
+            const response = await addTodo({
+                todo: text,
+                userId,
+                completed: false
+            });
+
+            if (response.data) {
+                data.todos.unshift(response.data)
+
+                setData((data: any) => {
+                    return {
+                        ...data,
+                        todos: data.todos
+                    }
+                })
+
+                setIsDataLoading(false)
+
+                callback()
+            }
+        } catch (e) {
+            console.log(e)
+            setIsDataLoading(false)
+        }
+
+    }
 
     const updateTodo = async (id: any, dataObj: any, callback: any) => {
         setIsDataLoading(true)
@@ -108,7 +137,8 @@ export const TableProvider: React.FC<PropsWithChildren<unknown>> = ({children}) 
 
     }
 
-    return <TableContext.Provider value={{columns, data, isDataLoading, setData, fetchTodos, updateTodo, removeTodo}}>
+    return <TableContext.Provider
+        value={{columns, data, isDataLoading, setData, fetchTodos, updateTodo, removeTodo, addNewTodo}}>
         {children}
     </TableContext.Provider>
 };

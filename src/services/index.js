@@ -7,6 +7,7 @@ export const signupService = (data) => axiosInstance.post('/users/add', data, {b
 
 //TODO SERVICES
 export const getAllTodos = (config) => axiosInstance.get('/todos', config)
+export const addTodo = (data) => axiosInstance.post('/todos/add', data)
 export const editTodo = (data, id) => axiosInstance.put('/todos/' + id, data)
 export const deleteTodo = (id) => axiosInstance.delete('/todos/' + id)
 
