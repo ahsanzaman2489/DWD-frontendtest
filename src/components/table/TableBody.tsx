@@ -4,6 +4,7 @@ import {TableContext} from "../context/tableContext";
 import {useSelector} from "react-redux";
 import {Input} from "../Input";
 import {isEmpty} from "lodash";
+import {toast} from "react-toastify";
 
 export function TableBody({tableData}: any) {
     const {columns, updateTodo, removeTodo}: any = useContext(TableContext)
@@ -64,6 +65,12 @@ export function TableBody({tableData}: any) {
                     show: false,
                     id
                 })
+
+                toast('edit successful', {
+                    theme: 'colored',
+                    type: 'success'
+                });
+
             })
         }
     }
@@ -80,7 +87,10 @@ export function TableBody({tableData}: any) {
     }
 
     const handleDelete = (id: number) => {
-        removeTodo(id)
+        removeTodo(id, () => toast('delete successful', {
+            theme: 'colored',
+            type: 'success'
+        }))
     }
 
     const isEditor = role === 'editor';
@@ -138,8 +148,6 @@ export function TableBody({tableData}: any) {
                                     </>
                                     : item[accessor].toString()}</>
                             }
-
-
                         </td>)}
                 </tr>
             }

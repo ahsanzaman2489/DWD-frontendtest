@@ -19,7 +19,7 @@ export function FormLayOut({handleSubmit, title, type, isLoading, children}: Pro
                         {children}
 
                         <button type="submit" className="login__button" disabled={isLoading}>{isLoading ?
-                            <i className={'bx bx-loader icon'}>
+                            <i className={'bx bx-loader-alt bx-spin bx-rotate-90'}>
                             </i> : title}
                         </button>
 

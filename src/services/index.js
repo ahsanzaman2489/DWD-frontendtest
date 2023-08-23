@@ -1,4 +1,4 @@
-import axiosInstance, {getToken} from "../axios/axios";
+import axiosInstance from "../axios/axios";
 
 
 // AUTH SERVICES

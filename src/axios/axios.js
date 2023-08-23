@@ -63,15 +63,6 @@ axiosInstance.interceptors.response.use(
                 }
             )
 
-            // toast('token Expired Redirecting to login', {
-            //     type: 'error',
-            //     theme: 'colored',
-            //     autoClose: 5000,
-            //     onClose: () => {
-            //         console.log('closed')
-            //     }
-            // })
-
         }
 
         return Promise.reject(error);

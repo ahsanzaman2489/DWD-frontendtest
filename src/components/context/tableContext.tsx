@@ -92,13 +92,14 @@ export const TableProvider: React.FC<PropsWithChildren<unknown>> = ({children}) 
 
     }
 
-    const removeTodo = async (id: any) => {
+    const removeTodo = async (id: any, callback: any) => {
         setIsDataLoading(true)
         try {
             const response = await deleteTodo(id);
             if (response.data) {
                 updateState(response)
                 setIsDataLoading(false)
+                callback();
             }
         } catch (e) {
             console.log(e)

@@ -77,7 +77,7 @@ export function Table(props: Props) {
                 <TableHead handleSorting={handleSorting}/>
                 {tableData.length > 0 && <TableBody tableData={tableData}/>}
             </table>
-            {tableData.length === 0 && <div className={'no-results'}>No results</div>}
+            {tableData.length === 0 && !isDataLoading && <div className={'no-results'}>No results</div>}
             {tableData.length > 0 && <Paginate
                 postsPerPage={postsPerPage}
                 totalPosts={totalPosts}

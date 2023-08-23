@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import {isEmpty, omit} from 'lodash'
 
 const useForm = (schema, callback) => {
