@@ -3,12 +3,12 @@ import * as React from 'react';
 import {useContext, useEffect, useState} from "react";
 import {TableHead} from "./TableHead";
 import {TableBody} from "./TableBody";
-import {useSortingTable} from "../../hooks/useSortingTable";
-import {TableContext} from "../context/tableContext";
+import {useSortingTable} from "hooks/useSortingTable";
+import {TableContext} from "context/tableContext";
 import Paginate from "./Pagniate";
 import {useSelector} from "react-redux";
 import {Input} from "../Input";
-import {useSearch} from "../../hooks/useSearch";
+import {useSearch} from "hooks/useSearch";
 import {toast} from "react-toastify";
 
 

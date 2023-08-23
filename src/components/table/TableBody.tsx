@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {useContext, useState} from "react";
-import {TableContext} from "../context/tableContext";
+import {TableContext} from "context/tableContext";
 import {useSelector} from "react-redux";
 import {Input} from "../Input";
 import {isEmpty} from "lodash";

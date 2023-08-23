@@ -1,5 +1,5 @@
 import React, {createContext, useState, PropsWithChildren} from "react";
-import {addTodo, deleteTodo, editTodo, getAllTodos} from "../../services";
+import {addTodo, deleteTodo, editTodo, getAllTodos} from "services";
 
 
 type dataType = {

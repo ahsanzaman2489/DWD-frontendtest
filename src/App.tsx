@@ -11,7 +11,7 @@ import SignUp from "./pages/SignUp";
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {NavBar} from "./components/NavBar";
-import {TableProvider} from "./components/context/tableContext";
+import {TableProvider} from "./context/tableContext";
 
 
 function App() {

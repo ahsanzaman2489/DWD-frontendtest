@@ -1,6 +1,5 @@
 import React, {useContext, useState} from "react";
-import {TableContext} from "../context/tableContext";
-import {useSortingTable} from "../../hooks/useSortingTable";
+import {TableContext} from "context/tableContext";
 
 export function TableHead({handleSorting}: any) {
     const {columns}: any = useContext(TableContext)
