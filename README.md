@@ -2,7 +2,7 @@
 1) React
 2) React Router
 3) Redux
-4) Redux presist (to presist the state in localstorage)
+4) Redux persist (to persist the state in localstorage)
 5) HTML
 6) SCSS
 7) Toastify
@@ -11,57 +11,57 @@
 ```javascript
 src 
     -- Components (Reusable components)
-    -- Hooks (Custom hooks for sorting , filtering and form validation)
+    -- Hooks (Custom hooks for sorting, filtering and form validation)
     -- Pages (Routes)
     -- Services (Endpoints)
     -- Axios (Axions client with interceptor)
     -- Layout (Layout to reuse on different screens)
     -- Styles (sass styles)
-    -- Store (redux store with Reducers, Actions , Redux presistor)
+    -- Store (redux store with Reducers, Actions, Redux persistor)
 ```
 
-# Key Features of project
-1) Built with React 18 and Create react App
-2) Typescript for static type checkings
-3) Custom hooks created from sractch for sorting , filtering tables and form validation with limited funcationality
-4) Redux presistor used to presist user state in local storage on any change and will hydrate the app on reload
-5) Search box for table
-6) Add new TODO button to add new one
-8) Tokenization , All URL requires Access token after login
+# Key Features of Project
+1) Built with React 18 and Create React App.
+2) Typescript for static type checking.
+3) Custom hooks created from scratch for sorting, filtering tables and form validation with limited functionality.
+4) Redux persist is used to persist the user state in local storage on any change and will hydrate the app on reload.
+5) Search box for table.
+6) Add a new TODO button to add a new one.
+8) Tokenization, All URL requires an Access token after login.
 10) Component/Module Based SCSS.
-11) Role base rendering
-12) All Exeptions Handled
-13) Loadings added where needed
-14) When you login as editor and try to hover on certain row , it will show your edit and delete button. after clicking edit you will go into edit mode.
-15) context api added to get manage table state
-16) user state is handled by Redux
+11) Role-based rendering.
+12) All Exceptions Handled.
+13) Loadings added where needed.
+14) When you log in as an editor and try to hover on a certain row, it will show your edit and delete button. after clicking edit you will go into edit mode.
+15) Context API added to manage table state.
+16) The user state is handled by Redux.
 
 # What I did out the scope which is good for UX
-1) Pagination , it was not mentioned in the description but i added it to make UX more robust.
-2) Axios interceptor added specialy for response to check if token is expired redirect to login after showing the message.
+1) Pagination, It was not mentioned in the description but I added it to make UX more robust.
+2) Axios interceptor added specially for response to check if the token is expired redirect to login after showing the message.
 3) Creating custom hooks like a new plugin
-4) Added Loading ad expections
-5) Toast added on success and errors where needed to let user know
-6) .env created for Base URL's
+4) Added Loading ad exceptions
+5) Toast added on success and errors where needed to let the user know
+6) .env created for Base URLs
 7) Project structure managed
-8) Protected Routed mechanism added so user cant not visit without having valid token
+8) A Protected Routed mechanism was added so user cannot visit without having a valid token
 
-# Limitaions
-1) Endpoint was not provided in the description , so i decide to use dummyjason.com server to get the data, but data is not real but it will mimic every action (CRUD)
-2) Refresh token was not provided by dummyjason.com so i decide to redirect user to login instead getting the new token with Refresh token.
-3) Desing was not provided by i try to come up with simple one with good UX and try to cover most of the cases.
-4) In description its mentioned that password validation needs to apply and without signup page it was not possibe, So i created the page and added the Sign up Api.
-5) You can not create user but can check the validation and mock response from the server
-6) No Clear guidlines on caching
-7) Every CRUD operation is throuhg API integration but limitation is if you referesh you will get old data because sever is not saving state. but you will see the changes going through and coming from server
+# Limitations
+1) The endpoint was not provided in the description, so I decided to use dummyjason.com server to get the data, but data is not real but it will mimic every action (CRUD).
+2) The Refresh token was not provided by dummyjason.com so I decided to redirect the user to log in instead of getting the new token with the Refresh token.
+3) Design was not provided by i tried to come up with a simple one with good UX and tried to cover most of the cases.
+4) In the description it's mentioned that password validation needs to apply and without a signup page, it was not possible, So I created the page and added the Signup Api.
+5) You can not create a user but can check the validation and mock response from the server.
+6) No Clear guidelines on caching.
+7) Every CRUD operation is through API integration but the limitation is if you refresh you will get old data because the server is not saving state. but you will see the changes going through and coming from the server.
 
-# Things i wish , i could have implemented because of time
-1) Code splitting
-2) Referesh Token
-3) System design
-4) Test cases
-5) caching
-6) query params in the url to the current page state of thr table
+# Things I wish , I could have implemented because of time
+1) Code splitting.
+2) Refresh Token.
+3) System design.
+4) Test cases.
+5) caching.
+6) Query params in the URL to the current page state of the table.
 
 # Login Credentials
 ```javascript
